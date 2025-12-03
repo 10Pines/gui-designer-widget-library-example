@@ -1,7 +1,7 @@
-'From Cuis7.5 [latest update: #7739] on 2 December 2025 at 5:44:19 pm'!
-'Description '!
-!provides: 'WidgetLibraryExample' 1 1!
-!requires: 'GUIDesigner' 1 723 nil!
+'From Cuis7.5 [latest update: #7739] on 3 December 2025 at 6:16:49 pm'!
+'Description Use new message to create widgets for editing'!
+!provides: 'WidgetLibraryExample' 1 3!
+!requires: 'GUIDesigner' 1 737 nil!
 SystemOrganization addCategory: #'WidgetLibraryExample-Widgets'!
 SystemOrganization addCategory: #'WidgetLibraryExample-SampleWindows'!
 SystemOrganization addCategory: #'WidgetLibraryExample-GUIDesigner'!
@@ -286,10 +286,10 @@ widgetHierarchyRootClass
 	
 	^ MockWidget! !
 
-!MockWidgetLibrary methodsFor: 'window' stamp: 'NPM 2/Dec/2025 17:31:43'!
+!MockWidgetLibrary methodsFor: 'window' stamp: 'NPM 3/Dec/2025 18:14:32'!
 createWindow
 	
-	^ MockWindow createUsing: self! !
+	^ MockWindow createForEditingUsing: self! !
 
 !MockWidgetLibrary class methodsFor: 'class initialization' stamp: 'NPM 2/Dec/2025 17:44:04'!
 initialize
