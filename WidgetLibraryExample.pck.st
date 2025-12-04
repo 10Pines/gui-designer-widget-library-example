@@ -1,7 +1,7 @@
-'From Cuis7.5 [latest update: #7739] on 3 December 2025 at 6:16:49 pm'!
-'Description Use new message to create widgets for editing'!
-!provides: 'WidgetLibraryExample' 1 3!
-!requires: 'GUIDesigner' 1 737 nil!
+'From Cuis7.5 [latest update: #7739] on 4 December 2025 at 10:31:00 am'!
+'Description Reuse compositeWidgetBuilders from WidgetLibrary'!
+!provides: 'WidgetLibraryExample' 1 5!
+!requires: 'GUIDesigner' 1 739 nil!
 SystemOrganization addCategory: #'WidgetLibraryExample-Widgets'!
 SystemOrganization addCategory: #'WidgetLibraryExample-SampleWindows'!
 SystemOrganization addCategory: #'WidgetLibraryExample-GUIDesigner'!
@@ -237,13 +237,6 @@ guiProgrammerFor: morph in: aWindowClass
 		ifTrue: [ ^ MockWindowGUIProgrammer for: morph in: aWindowClass using: self  ].	
 		
 	^ super guiProgrammerFor: morph in: aWindowClass! !
-
-!MockWidgetLibrary methodsFor: 'composite widgets' stamp: 'NPM 2/Dec/2025 15:28:06'!
-compositeWidgetBuilders
-	
-	self toDo: 'To be implemented'.
-	
-	^ {}! !
 
 !MockWidgetLibrary methodsFor: 'texts' stamp: 'NPM 2/Dec/2025 15:38:39'!
 createEntryField
