@@ -1,7 +1,7 @@
-'From Cuis7.5 [latest update: #7758] on 11 December 2025 at 4:17:42 pm'!
-'Description '!
-!provides: 'Example001GUIDesigner' 1 3!
-!requires: 'GUIDesigner' 1 737 nil!
+'From Cuis7.5 [latest update: #7758] on 12 December 2025 at 7:31:43 pm'!
+'Description Implement Example001WidgetLibrary>>#designTimeClass'!
+!provides: 'Example001GUIDesigner' 1 4!
+!requires: 'GUIDesigner' 1 763 nil!
 !requires: 'Example001Widgets' 1 5 nil!
 SystemOrganization addCategory: #Example001GUIDesigner!
 
@@ -120,6 +120,11 @@ writeMethodBodyInto: aSourceCode
 		arguments: { self sourceCodeToConfigureWidget }
 		into: aSourceCode.  ! !
 
+!Example001WidgetLibrary methodsFor: 'accessing' stamp: 'NPM 12/Dec/2025 19:30:28'!
+designTimeClass
+
+	^ self class ! !
+
 !Example001WidgetLibrary methodsFor: 'accessing' stamp: 'NPM 2/Dec/2025 15:55:31'!
 runtimeClass
 	
@@ -202,6 +207,10 @@ guiProgrammerFor: morph in: aWindowClass
 		
 	^ super guiProgrammerFor: morph in: aWindowClass! !
 
+!Example001WidgetLibrary methodsFor: 'design time properties' stamp: 'jmv 11/Dec/2025 11:55:23'!
+restoreDesignTimePropertiesInWidgetTreeStartingAt: aWidget 
+	"TBD"! !
+
 !Example001WidgetLibrary methodsFor: 'texts' stamp: 'NPM 2/Dec/2025 15:38:39'!
 createEntryField
 	
@@ -247,10 +256,6 @@ widgetHierarchyRootClass
 createWindow
 	
 	^ Example001Window createForEditingUsing: self! !
-
-!Example001WidgetLibrary methodsFor: 'design time properties' stamp: 'jmv 11/Dec/2025 11:55:23'!
-restoreDesignTimePropertiesInWidgetTreeStartingAt: aWidget 
-	"TBD"! !
 
 !Example001WidgetLibrary class methodsFor: 'class initialization' stamp: 'NPM 2/Dec/2025 17:44:04'!
 initialize
