@@ -1,13 +1,23 @@
-'From Cuis7.5 [latest update: #7758] on 12 December 2025 at 7:31:43 pm'!
+'From Cuis7.5 [latest update: #7764] on 16 December 2025 at 8:21:36 am'!
 'Description Implement Example001WidgetLibrary>>#designTimeClass'!
-!provides: 'Example001GUIDesigner' 1 4!
+!provides: 'Example001GUIDesigner' 1 5!
 !requires: 'GUIDesigner' 1 763 nil!
 !requires: 'Example001Widgets' 1 5 nil!
 SystemOrganization addCategory: #Example001GUIDesigner!
 
 
+!classDefinition: #Example001GeneralGUIProgrammer category: #Example001GUIDesigner!
+BoxMorphGUIProgrammer subclass: #Example001GeneralGUIProgrammer
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Example001GUIDesigner'!
+!classDefinition: 'Example001GeneralGUIProgrammer class' category: #Example001GUIDesigner!
+Example001GeneralGUIProgrammer class
+	instanceVariableNames: ''!
+
 !classDefinition: #Example001ButtonGUIProgrammer category: #Example001GUIDesigner!
-BoxMorphGUIProgrammer subclass: #Example001ButtonGUIProgrammer
+Example001GeneralGUIProgrammer subclass: #Example001ButtonGUIProgrammer
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -17,7 +27,7 @@ Example001ButtonGUIProgrammer class
 	instanceVariableNames: ''!
 
 !classDefinition: #Example001EntryFieldGUIProgrammer category: #Example001GUIDesigner!
-BoxMorphGUIProgrammer subclass: #Example001EntryFieldGUIProgrammer
+Example001GeneralGUIProgrammer subclass: #Example001EntryFieldGUIProgrammer
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -27,7 +37,7 @@ Example001EntryFieldGUIProgrammer class
 	instanceVariableNames: ''!
 
 !classDefinition: #Example001LabelGUIProgrammer category: #Example001GUIDesigner!
-BoxMorphGUIProgrammer subclass: #Example001LabelGUIProgrammer
+Example001GeneralGUIProgrammer subclass: #Example001LabelGUIProgrammer
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -37,7 +47,7 @@ Example001LabelGUIProgrammer class
 	instanceVariableNames: ''!
 
 !classDefinition: #Example001WindowGUIProgrammer category: #Example001GUIDesigner!
-BoxMorphGUIProgrammer subclass: #Example001WindowGUIProgrammer
+Example001GeneralGUIProgrammer subclass: #Example001WindowGUIProgrammer
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
