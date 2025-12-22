@@ -1,7 +1,7 @@
-'From Cuis7.5 [latest update: #7764] on 16 December 2025 at 8:21:36 am'!
-'Description Implement Example001WidgetLibrary>>#designTimeClass'!
-!provides: 'Example001GUIDesigner' 1 5!
-!requires: 'GUIDesigner' 1 763 nil!
+'From Cuis7.7 [latest update: #7779] on 22 December 2025 at 7:22:30 pm'!
+'Description Update GUI Designer requirement.'!
+!provides: 'Example001GUIDesigner' 1 8!
+!requires: 'GUIDesigner-DesignTime' 1 6 nil!
 !requires: 'Example001Widgets' 1 5 nil!
 SystemOrganization addCategory: #Example001GUIDesigner!
 
