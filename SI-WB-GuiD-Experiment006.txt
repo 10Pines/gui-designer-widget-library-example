@@ -1,0 +1,45 @@
+"Revisar ultimos changesets contra el ejemplo 4.
+Grabar no anda aun."
+"Intentando editar el TopPaneMorph (o sea el FormLayout) DIRECTAMENTE"
+"GUIDesigner morphs friendly, con el arbol basado en las instancias creadas por #createViews.
+Example004. Make the window morph have a FormLayout, and all widgets have layout specs
+that can be converted from / to LayoutFrames"
+"Estado actual. Hay que:
+- terminar la generacion de codigo para que haga un buen #createViewsX
+- transformar este código de creación de instancias en algo razonable en alguna clase"
+
+Feature require: 'GUIDesigner-DesignTime'.	"GUI Designer"
+Feature require: 'WBCompat'.					"LW+WB VSE code. Will replaced by Mike's"
+Feature require: 'WindowBuilderExamples'.		"Simple windows with #createViews"
+Feature require: 'Experiment006Widgets'.		"v6 GUI Designer friendly widgets"
+Feature require: 'Experiment006GUIDesigner'.	"v6 GUI Desgner tools for widgets"
+
+"
+guiDesignerWindow class allInstancesDo: [ :a | a delete ].
+InspectorWindow allInstancesDo: [ :a | a delete ].
+ObjectExplorerWindow allInstancesDo: [ :a | a delete ].
+"
+viewManagerClass := ProductGridWindow.
+viewManagerClass := CUISDemoWindow.
+viewManagerClass := WBExample01.
+viewManagerClass := WBExample02.
+viewManager := viewManagerClass new createViews.
+topPane := viewManager mainView.
+guiDesignerWindow := TopPaneWidgetMorph new.
+	topPaneRectangle := topPane initWindowSize.
+	guiDesignerWindow morphExtent: topPaneRectangle extent.
+	topPane children do: [ :widget |
+		guiDesignerWindow addMorphBack: (WindowWidgetMorph forWindow: widget) ].
+"
+guiDesignerWindow openInWorld.
+"
+guiDesignerWindow configureWidgetForEditing.
+designer := GUIDesigner
+		using: Experiment006WidgetLibrary new
+		toEdit: guiDesignerWindow
+		savingIn: viewManagerClass
+		"previewingWindowsWith: [ :windowToOpen | windowToOpen openInWorld ]".
+(GUIDesignerWindow create: designer) openInWorld.
+"
+createViewsY
+"
